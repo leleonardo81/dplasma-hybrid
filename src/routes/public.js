@@ -53,10 +53,20 @@ router.post(
 router.get(
   '/donor-request',
   donorController.getDonorRequest
-)
+);
 router.get(
   '/donor-request/:id',
   donorController.getDetailDonorRequest
-)
+);
+router.get(
+  '/profil',
+  apiAuth,
+  userController.profile
+);
+router.post(
+  '/profil',
+  apiAuth,
+  userController.updateProfile
+);
 
 module.exports = router;
